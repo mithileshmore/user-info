@@ -28,29 +28,28 @@ def hello_world():
         s.download()
         s.upload()
         res = s.results.dict()
-        # return res["download"], res["upload"], res["ping"]
 
-        # ip = request.headers.get('X-Forwarded-For', request.remote_addr)
-        # url = 'https://ipinfo.io/' + ip + '/json'
-        # res = urlopen(url)
-        # data = load(res)
-        # for attr in data.keys():
-        #     if attr == 'country':
-        #         country = data[attr]
-        #     if attr == 'region':
-        #         region = data[attr]
-        #     if attr == 'city':
-        #         city = data[attr]
-        #     if attr == 'ip':
-        #         ip = data[attr]
+        ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+        url = 'https://ipinfo.io/' + ip + '/json'
+        res = urlopen(url)
+        data = load(res)
+        for attr in data.keys():
+            if attr == 'country':
+                country = data[attr]
+            if attr == 'region':
+                region = data[attr]
+            if attr == 'city':
+                city = data[attr]
+            if attr == 'ip':
+                ip = data[attr]
 
-        # response = {
-        #     'name': username,
-        #     'ip': ip,
-        #     'country': country,
-        #     'city': city,
-        #     'region': region
-        # }
+        response = {
+            'name': username,
+            'ip': ip,
+            'country': country,
+            'city': city,
+            'region': region
+        }
         response = {
             'name': 'abc',
             'ip': '192',
@@ -59,9 +58,6 @@ def hello_world():
             'region': 'maha',
             'download': size(int(res["download"]))
         }
-        # print(response.name)
-        # import pdb 
-        # pdb.set_trace()
         return render_template("viewPage.html", user_info=response)
     return render_template("input_name.html")
 
