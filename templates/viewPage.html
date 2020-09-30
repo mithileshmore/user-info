@@ -1,0 +1,47 @@
+<html>
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	<body>
+		<h2 style="text-align: center;">User basic info</h2>
+		<input type="button" class="back-button" value="Back" onclick="window.history.back()" />
+		<table class="w3-table-all w3-centered">
+			<tr>	
+				<td>Name</td>
+				<td>IP</td>
+				<td>Country</td>
+				<td>City</td>
+				<td>Region</td>
+				<td>Download</td>
+			</tr>
+			<tr>
+				<td>{{user_info.name}}</td>
+				<td>{{user_info.ip}}</td>
+				<td>{{user_info.country}}</td>
+				<td>{{user_info.city}}</td>
+				<td>{{user_info.region}}</td>
+				<td>{{user_info.download}}</td>
+			</tr>
+        </table>
+        <form action="./downloadlogfile">
+            <button action="submit" value="submit">Click me to download file for windows</button>
+        </form>
+        <p> 
+            Download this bat script, run it and a csv will be created.
+            Paste output of csv here: https://docs.google.com/spreadsheets/d/13MhXpFuhFUM2JEPbUVjc1vfCv94KWpbEobj_19x4jgs/edit#gid=0
+        </p>
+	</body>
+</html>
