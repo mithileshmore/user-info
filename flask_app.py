@@ -14,7 +14,7 @@ import speedtest
 from hurry.filesize import size
 
 
-app = Flask(__name__)
+# app = Flask(__name__)
 path = 'userinfoToCsv.bat'
 
 @app.route('/', methods=["GET", "POST"])
